@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_movie">
+
+    <fragment
+        android:id="@+id/nav_movie"
+        android:name="com.dxy.MovieAPPS.ui.movies.MoviesFragment"
+        android:label="Movie"
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_nav_movie_to_nav_details"
+            app:destination="@id/nav_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.dxy.MovieAPPS.ui.favorite.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_nav_favorite_to_nav_details"
+            app:destination="@id/nav_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.dxy.MovieAPPS.ui.details.DetailsFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.dxy.MovieAPPS.data.model.Movies" />
+    </fragment>
+</navigation>
